@@ -18,10 +18,10 @@ class Exercicio5Test {
     void should_return_all_numbers_at_index_before_4(){
         // arrange
         ArrayList<Integer> allNumbers = new ArrayList<>(Arrays.asList(3, 4, 6, 8, 1, 23, 89, 12));
-        ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(3, 4, 6, 8));
+        ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(3, 4, 6, 8, 1));
 
         //
-        ArrayList<Integer> result = Exercicio5.exercicio5(allNumbers, 4);
+        ArrayList<Integer> result = Exercicio5.exercicio5(allNumbers, 5);
         // assert
         assertEquals(expected, result);
     }
