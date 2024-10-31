@@ -26,4 +26,30 @@ class Exercicio3Test {
         // assert
         assertEquals(2, result);
     }
+
+    @Test
+    void should_return_0(){
+        // arrange
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        // act
+        int result = Exercicio3.exercicio3(numbers, 1);
+        // assert
+        assertEquals(0, result);
+    }
+
+    @Test
+    void should_return_minus_1(){
+        // arrange
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        // act
+        int result = Exercicio3.exercicio3(numbers, 100);
+        // assert
+        assertEquals(-1, result);
+    }
 }

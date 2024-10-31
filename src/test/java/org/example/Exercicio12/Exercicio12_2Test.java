@@ -20,4 +20,14 @@ class Exercicio12_2Test {
         // assert
         assertEquals(5, result);
     }
+
+    @Test
+    void should_return_the_lowest_value2(){
+        // arrange
+        int[] numbers = {5,4,3,2,1};
+        // act
+        int result = Exercicio12_2.exercicio12_2(numbers);
+        // assert
+        assertEquals(5, result);
+    }
 }
