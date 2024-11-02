@@ -32,7 +32,9 @@ class Exercicio13Test {
         return Stream.of(
                 Arguments.of(new int[]{2, 3}, new int[]{1,2}, 8),
                 Arguments.of(new int[]{2, 3, 4}, new int[]{1, 2, 3}, 20),
-                Arguments.of(new int[]{-1, -2, 3}, new int[]{2, 3, 4}, 4)
+                Arguments.of(new int[]{-1, -2, 3}, new int[]{2, 3, 4}, 4),
+                Arguments.of(new int[]{0, 2, 3}, new int[]{1, 0, 4}, 12)
+
         );
     }
 }
