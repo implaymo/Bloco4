@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 public class Exercicio4{
 
-    public static ArrayList<Integer> exercicio4(int number){
+    public static ArrayList<Integer> exercicio4(int userInputNumber){
         ArrayList<Integer> numbersList = new ArrayList<>();
-        String numberAsString = String.valueOf(number);
-        for (int i = 0; i < numberAsString.length(); i++){
-            int numberAsInt = Integer.parseInt(String.valueOf(numberAsString.charAt(i)));
+        String userInputNumberToString = String.valueOf(userInputNumber);
+        for (int i = 0; i < userInputNumberToString.length(); i++){
+            int numberAsInt = Integer.parseInt(String.valueOf(userInputNumberToString.charAt(i)));
             numbersList.add(numberAsInt);
         }
-        System.out.println(numbersList);
         return numbersList;
     }
 }
