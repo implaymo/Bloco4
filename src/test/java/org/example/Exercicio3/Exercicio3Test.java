@@ -1,9 +1,15 @@
 package org.example.Exercicio3;
 
 import org.example.Exercicio2.Exercicio2;
+import org.example.Exercicio7.Exercicio7;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,42 +20,24 @@ class Exercicio3Test {
         new Exercicio3();
     }
 
-    @Test
-    void should_return_2(){
+    @ParameterizedTest
+    @MethodSource("arrayProvider")
+    void should_return_array_index_were_accumulated_product_is_bigger_than_user_input_number(int[] numbers,
+                                                                                             int userInput,
+                                                                                             int expected) {
         // arrange
-        ArrayList<Integer> numbers = new ArrayList<>();
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
         // act
-        int result = Exercicio3.exercicio3(numbers, 10);
+        int result = Exercicio3.exercicio3(numbers, userInput);
         // assert
-        assertEquals(2, result);
+        assertEquals(expected, result);
     }
 
-    @Test
-    void should_return_0(){
-        // arrange
-        ArrayList<Integer> numbers = new ArrayList<>();
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        // act
-        int result = Exercicio3.exercicio3(numbers, 1);
-        // assert
-        assertEquals(0, result);
-    }
 
-    @Test
-    void should_return_minus_1(){
-        // arrange
-        ArrayList<Integer> numbers = new ArrayList<>();
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        // act
-        int result = Exercicio3.exercicio3(numbers, 100);
-        // assert
-        assertEquals(-1, result);
-    }
+    // This method provides test data to the parameterized test
+    private static Stream<Arguments> arrayProvider() {
+        return Stream.of(
+                Arguments.of(new int[]{1, 2, 3, 4, 5}, 10, 3),
+                Arguments.of(new int[]{1, 2, 3, 4, 5}, 0, 0),
+                Arguments.of(new int[]{1, 2, 3, 4, 5}, 1000, -1)
+        );}
 }
