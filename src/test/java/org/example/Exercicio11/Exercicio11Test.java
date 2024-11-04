@@ -1,6 +1,14 @@
 package org.example.Exercicio11;
 
+import org.example.Exercicio4.Exercicio4;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,21 +19,24 @@ class Exercicio11Test {
         new Exercicio11();
     }
 
-    @Test
-    void should_return_true_if_number_palindrome(){
+    @ParameterizedTest
+    @MethodSource("allTests")
+    void should_return_true_if_palindrome_and_false_if_not_palindrome(int userInputNumber, boolean expected) {
         // arrange
         // act
-        boolean result = Exercicio11.exercicio11(1771);
+        boolean result = Exercicio11.exercicio11(userInputNumber);
         // assert
-        assertTrue(result);
+        assertEquals(expected, result);
     }
 
-    @Test
-    void should_return_false_if_number_not_palindrome(){
-        // arrange
-        // act
-        boolean result = Exercicio11.exercicio11(1772);
-        // assert
-        assertFalse(result);
+
+    // This method provides test data to the parameterized test
+    private static Stream<Arguments> allTests() {
+        return Stream.of(
+                Arguments.of(1771, true),
+                Arguments.of(1772, false),
+                Arguments.of(1, true),
+                Arguments.of(12, false)
+                );
     }
 }
