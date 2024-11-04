@@ -21,7 +21,7 @@ class Exercicio5Test {
 
     @ParameterizedTest
     @MethodSource("allTests")
-    void should_return_number_split_into_an_array(int[] numbers, int userInput, ArrayList<Integer> expected) {
+    void should_return_numbers_till_index_equals_user_input(int[] numbers, int userInput, ArrayList<Integer> expected) {
         // arrange
         // act
         ArrayList<Integer> result = Exercicio5.exercicio5(numbers, userInput);
