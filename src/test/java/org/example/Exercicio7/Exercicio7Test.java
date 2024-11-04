@@ -38,6 +38,7 @@ class Exercicio7Test {
         return Stream.of(
                 Arguments.of(4, 10, 3, new ArrayList<>(List.of(6, 9))),
                 Arguments.of(-2, 4, 4, new ArrayList<>(List.of(0, 4))),
-                Arguments.of(1, 2, 0, new ArrayList<>(List.of()))
+                Arguments.of(1, 2, 0, new ArrayList<>(List.of())),
+                Arguments.of(-10, -4, -3, new ArrayList<>(List.of(-9, -6)))
         );}
 }
