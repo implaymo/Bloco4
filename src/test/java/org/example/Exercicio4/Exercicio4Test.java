@@ -48,5 +48,5 @@ class Exercicio4Test {
             Arguments.of(30781, new ArrayList<>(Arrays.asList(3, 0, 7, 8, 1))),
             Arguments.of(3, new ArrayList<>(Arrays.asList(3)))
     );
-}
+    }
 }
