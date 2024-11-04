@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Exercicio9 {
 
-    public static ArrayList<Integer> exercicio9(ArrayList<Integer> numbersList) {
+    public static ArrayList<Integer> exercicio9(int[] numbersList) {
         ArrayList<Integer> numbersOrganized = new ArrayList<>();
-        for (int i = 0; i < numbersList.size(); i++) {
-            if (numbersList.get(i) % 2 != 0) {
-                numbersOrganized.add(numbersList.get(i));
+        for (int i = 0; i < numbersList.length; i++) {
+            if (numbersList[i] % 2 != 0) {
+                numbersOrganized.add(numbersList[i]);
             }
         }
-        for (int i = 0; i < numbersList.size(); i++) {
-            if (numbersList.get(i) % 2 == 0) {
-                numbersOrganized.add(numbersList.get(i));
+        for (int i = 0; i < numbersList.length; i++) {
+            if (numbersList[i] % 2 == 0) {
+                numbersOrganized.add(numbersList[i]);
             }
         }
         return numbersOrganized;

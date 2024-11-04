@@ -9,10 +9,13 @@ public class Exercicio11 {
         String numberAsString = String.valueOf(number);
         ArrayList<String> reversedNumber = new ArrayList<>();
         boolean isPalindrome = false;
+
         for (int i = numberAsString.length() - 1; i >= 0; i--) {
-            reversedNumber.add(String.valueOf(numberAsString.charAt(i)));
+            String charAsString = String.valueOf(numberAsString.charAt(i));
+            reversedNumber.add(charAsString);
         }
-        if (String.join("", reversedNumber).equals(numberAsString)) {
+        String allNumbersTogether = String.join("", reversedNumber);
+        if (allNumbersTogether.equals(numberAsString)) {
             isPalindrome = true;
         }
         return isPalindrome;
