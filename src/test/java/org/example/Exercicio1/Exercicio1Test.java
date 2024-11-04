@@ -18,7 +18,7 @@ class Exercicio1Test {
 
     @ParameterizedTest
     @MethodSource("arrayProvider")
-    void should_return_valid(int[] numbersList, int expected) {
+    void should_return_total_sum_of_numbers_inside_of_array(int[] numbersList, int expected) {
         // arrange
         // act
         int result = Exercicio1.exercicio1(numbersList);
@@ -31,9 +31,10 @@ class Exercicio1Test {
         return Stream.of(
                 Arguments.of(new int[]{1, 2, 3}, 6),
                 Arguments.of(new int[]{-1, -2, 3}, 0),
-                Arguments.of(new int[]{0, 0, 1}, 1)
-
-        );
+                Arguments.of(new int[]{0, 0, 1}, 1),
+                Arguments.of(new int[]{1}, 1),
+                Arguments.of(new int[]{}, 0),
+                Arguments.of(new int[]{-1}, -1)
+                );
     }
-
 }
