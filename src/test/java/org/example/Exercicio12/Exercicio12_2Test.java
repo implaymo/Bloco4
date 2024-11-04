@@ -1,6 +1,11 @@
 package org.example.Exercicio12;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,5 +34,26 @@ class Exercicio12_2Test {
         int result = Exercicio12_2.exercicio12_2(numbers);
         // assert
         assertEquals(5, result);
+    }
+
+    @ParameterizedTest
+    @MethodSource("allTest")
+    void should_return_the_highest_value(int[] arrayInput, int expected) {
+        // arrange
+        // act
+        int result = Exercicio12_2.exercicio12_2(arrayInput);
+        // assert
+        assertEquals(expected, result);
+    }
+
+
+    // This method provides test data to the parameterized test
+    private static Stream<Arguments> allTest() {
+        return Stream.of(
+                Arguments.of(new int[]{1,2,3,4,5}, 5),
+                Arguments.of(new int[]{2, 3, 4}, 4),
+                Arguments.of(new int[]{0, 6}, 6),
+                Arguments.of(new int[]{-10, -2}, -2)
+        );
     }
 }
