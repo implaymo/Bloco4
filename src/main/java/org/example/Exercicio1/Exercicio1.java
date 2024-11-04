@@ -1,12 +1,11 @@
 package org.example.Exercicio1;
 
-import java.util.ArrayList;
-
 public class Exercicio1 {
-    public static int exercicio1(ArrayList<Integer> numbers){
+    public static int exercicio1(int[] numbers) {
         int sum = 0;
-        for (int i = 0; i < numbers.size(); i++){
-            sum += numbers.get(i);
+
+        for (int i = 0; i < numbers.length; i++){
+            sum += numbers[i];
         }
         return sum;
     }
