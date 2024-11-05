@@ -12,20 +12,18 @@ public class Exercicio12_2 {
             return 0;
         }
 
-        for (int i = 0; i < numbers.length - 1; i++) {
-            if (numbers[i] > numbers[i + 1]) {
-                temp = numbers[i];
-                numbers[i] = numbers[i + 1];
-                numbers[i + 1] = temp;
-                swap = true;
-            }
-
-            if (swap) {
-                i = -1;
-                swap = false;
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers.length; j++) {
+                if (i == j) {
+                    continue;
+                }
+                if (numbers[i] < numbers[j]) {
+                        temp = numbers[i];
+                        numbers[i] = numbers[j];
+                        numbers[j] = temp;
+                }
             }
         }
-
         return numbers[numbers.length - 1];
     }
 }
