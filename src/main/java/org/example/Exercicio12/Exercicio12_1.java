@@ -4,6 +4,11 @@ public class Exercicio12_1 {
 
     public static int exercicio12_1(int[] numbers){
         int temp;
+
+        if (numbers.length == 0) {
+            return 0;
+        }
+
         for (int i = 0; i < numbers.length - 1; i++) {
             if (numbers[i] < numbers[i+1]) {
                 temp = numbers[i];

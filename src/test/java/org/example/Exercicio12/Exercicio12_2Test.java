@@ -53,7 +53,8 @@ class Exercicio12_2Test {
                 Arguments.of(new int[]{1,2,3,4,5}, 5),
                 Arguments.of(new int[]{2, 3, 4}, 4),
                 Arguments.of(new int[]{0, 6}, 6),
-                Arguments.of(new int[]{-10, -2}, -2)
+                Arguments.of(new int[]{-10, -2}, -2),
+                Arguments.of(new int[]{}, 0)
         );
     }
 }

@@ -11,6 +11,7 @@ public class Exercicio9 {
                 numbersOrganized.add(numbersList[i]);
             }
         }
+
         for (int i = 0; i < numbersList.length; i++) {
             if (numbersList[i] % 2 == 0) {
                 numbersOrganized.add(numbersList[i]);

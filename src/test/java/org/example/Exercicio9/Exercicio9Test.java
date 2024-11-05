@@ -36,7 +36,8 @@ class Exercicio9Test {
         return Stream.of(
                 Arguments.of(new int[]{1, 2, 3, 4, 5,6}, new ArrayList<>(List.of(1 ,3 ,5 ,2 ,4 ,6))),
                 Arguments.of(new int[]{}, new ArrayList<>(List.of())),
-                Arguments.of(new int[]{1, 2, 3}, new ArrayList<>(List.of(1 ,3 ,2)))
-        );
+                Arguments.of(new int[]{1, 2, 3}, new ArrayList<>(List.of(1 ,3 ,2))),
+                Arguments.of(new int[]{3, 1, 2}, new ArrayList<>(List.of(3 ,1 ,2)))
+                );
     }
 }
