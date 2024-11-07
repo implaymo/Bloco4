@@ -5,22 +5,43 @@ public class Exercicio12_7 {
     public static int[] exercicio12_7(int[] numbers){
         int count = 0;
         for (int i = 0; i < numbers.length; i++){
-            if (numbers[i] % 2 == 0){
+            if (numbers[i] < 0 || (numbers[i] % 2 == 0 && numbers[i] != 2)){
+                continue;
+            }
+            if (isPrime(numbers[i])){
                 count++;
             }
         }
-        return addEvenNumbersToList(count, numbers);
+        return addPrimeNumbersToList(count, numbers);
     }
 
-    public static int[] addEvenNumbersToList(int totalEvenNumbers, int[] numbers) {
-        int [] evenNumbers = new int[totalEvenNumbers];
-        int indexOfEvenNumber = 0;
-        for (int i = 0; i < numbers.length; i++){
-            if (numbers[i] % 2 == 0 && indexOfEvenNumber < totalEvenNumbers){
-                evenNumbers[indexOfEvenNumber] = numbers[i];
-                indexOfEvenNumber++;
+
+    public static boolean isPrime(int number){
+        int totalDivisors = 0;
+        for (int i = 3; i <= Math.sqrt(number); i++){
+            if (number % i == 0){
+                totalDivisors++;
             }
         }
-        return evenNumbers;
+        if (totalDivisors > 0){
+            return false;
+        }
+        return true;
+    }
+
+
+    public static int[] addPrimeNumbersToList(int totalPrimeNumbers, int[] numbers) {
+        int [] primeNumbers = new int[totalPrimeNumbers];
+        int index = 0;
+        for (int i = 0; i < numbers.length; i++){
+            if (numbers[i] < 0 || (numbers[i] % 2 == 0 && numbers[i] != 2)){
+                continue;
+            }
+            if (index < totalPrimeNumbers && isPrime(numbers[i])){
+                primeNumbers[index] = numbers[i];
+                index++;
+            }
+        }
+        return primeNumbers;
     }
 }

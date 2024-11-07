@@ -30,9 +30,12 @@ class Exercicio12_7Test {
     // This method provides test data to the parameterized test
     private static Stream<Arguments> arrayProvider() {
         return Stream.of(
-                Arguments.of(new int[]{5, 6, 7}, new int[]{6}),
-                Arguments.of(new int[]{2, 3, 4}, new int[]{2, 4}),
-                Arguments.of(new int[]{-1, -2, 3, 4}, new int[]{-2, 4})
+                Arguments.of(new int[]{5, 6, 7}, new int[]{5, 7}),
+                Arguments.of(new int[]{2, 3, 4}, new int[]{2, 3}),
+                Arguments.of(new int[]{-1, -2, 3, 4}, new int[]{3}),
+                Arguments.of(new int[]{2}, new int[]{2}),
+                Arguments.of(new int[]{10, 12, 15, 17}, new int[]{17})
+
         );
     }
 }
